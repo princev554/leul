@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Leul Abay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #EDD6AD; /* Soft yellow background */
+            color: #000000; /* Black text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            right: 0; /* Move the header to the right */
+            width: auto;
+            background: none; /* Transparent background */
+            color: black; /* Black text color for header */
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end; /* Align the menu items to the right */
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black; /* Black text color for menu items */
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f5f5f5; /* Light hover effect on the menu items */
+        }
+
+        .portfolio-title {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid layout */
+            gap: 20px; /* Space between images */
+            padding: 0 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden; /* Ensure the fade effect stays within the image bounds */
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px; /* Fixed height for images */
+            object-fit: cover; /* Ensures images fill the space without stretching */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        .portfolio-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        /* The soft light effect that expands from the center */
+        .portfolio-item::after {
+            content: "";
+            position: absolute;
+            top: 50%; /* Start from the middle */
+            left: 50%; /* Start from the middle */
+            width: 0;  /* Initially, the effect is very small */
+            height: 0;
+            background: rgba(255, 255, 255, 0.6); /* Soft light with a higher opacity */
+            border-radius: 50%; /* Circular effect */
+            pointer-events: none;
+            opacity: 0;  /* Initially hidden */
+            transform: translate(-50%, -50%); /* Center the effect */
+            transition: width 1s ease-in-out, height 1s ease-in-out, opacity 1s ease-out; /* Smooth transition */
+        }
+
+        /* Expands and fades the effect out with smooth edges */
+        .portfolio-item:hover::after {
+            width: 300%; /* Expands the effect to cover a larger area */
+            height: 300%; /* Expands the effect to cover a larger area */
+            opacity: 1;  /* Make the effect visible */
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 80%); /* Soft gradient for smoother edges */
+        }
+
+        footer {
+            padding: 20px;
+            background: none; /* Transparent footer */
+            color: black; /* Black footer text color */
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: black; /* Black link text in footer */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #f5f5f5; /* Hover effect for the footer links */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="portfolio-title">
+        <h2>Portfolio</h2>
+    </div>
+
+    <section class="portfolio">
+        <!-- Portfolio Items with Links -->
+        <div class="portfolio-item">
+            <a href="description1.html">
+                <img src="img/farmer.jpg" alt="Farmer Artwork">
+            </a>
+        </div>
+        <div class="portfolio-item">
+            <a href="description2.html">
+                <img src="img/negus.jpg" alt="Negus Artwork">
+            </a>
+        </div>
+        <div class="portfolio-item">
+            <a href="description3.html">
+                <img src="img/village.jpg" alt="Village Artwork">
+            </a>
+        </div>
+        <div class="portfolio-item">
+            <a href="description4.html">
+                <img src="img/church.jpg" alt="Church Artwork">
+            </a>
+        </div>
+        <div class="portfolio-item">
+            <a href="description5.html">
+                <img src="img/warriors.jpg" alt="Warriors Artwork">
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Leul Abay. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
